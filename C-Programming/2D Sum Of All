@@ -1,1 +1,49 @@
+// Programmer:		Tatum Charves
+// Date:			7/6/2021
+// Program Name:	2D Sum of All
+// Chapter:			Chapter 5 - Arrays
+// Description:		Programs creates and populates a 2 dimensional array, displays the array then sums the array up. Uses nested loops and initializer lists to populate the array.
 
+#define _CRT_SECURE_NO_WARNINGS // Disable warnings (and errors) when using non-secure versions of printf, scanf, strcpy, etc.
+#include <stdio.h> // Needed for working with printf and scanf
+
+int main(void)
+{
+    // Constant and Variable Declarations
+    int arrayNum[10][10];
+    int i = 0; 
+    int j = 0;
+    int k = 1;
+    int sumArr = 0; //hold value of row sums
+
+
+    // *** PROCESSING AND OUTPUT ***
+    for (i = 0; i < 10; i++)
+    {
+        for (j = 0; j < 10; j++)
+            arrayNum[i][j] = k++;
+    }
+
+    printf("The contents of a 2-dimensional array, populated with the values 1 to 100...\n");
+    for (i = 0; i < 10; i++)
+    {
+        for (j = 0; j < 10; j++)
+        {
+            printf("%d\t", arrayNum[i][j]);
+        }
+        printf("\n"); //new line after each row
+    }
+    printf("\n"); //new line after array
+
+    for (i = 0; i < 10; i++)
+    {
+        for (j = 0; j < 10; j++)
+        {
+            sumArr += arrayNum[j][i];
+        }
+    }
+    printf("The sum of all the numbers in the array is %d.\n", sumArr);
+
+    printf("\n"); // new line before press any key
+    return 0;
+} // end main()
